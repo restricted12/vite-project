@@ -13,8 +13,6 @@ import Footer from '../src/components/footer/footer.jsx';
 import Youtube from '../src/components/Youtube/youtube.jsx';
 
 // importing routers
-
-
 import Ipad from '../src/routers/Ipad/Ipad.jsx'
 import Iphone from '../src/routers/iphone/iphone.jsx';
 import Mac from '../src/routers/Mac/Mac.jsx';
@@ -25,9 +23,6 @@ import Watch from '../src/routers/Watch/Watch.jsx'
 import E404 from '../src/routers/Eroor/404.jsx'
 import Productpage from './routers/product page/productpage.jsx';
 
-
-
-
 function App() {
   return (
     <div>
@@ -37,9 +32,9 @@ function App() {
       {/* Router for handling routing */}
       <Router>
         <Routes>
-          {/* Render all components when the user is on the root path ("/") */}
+          {/* Default route ("/") goes to /main */}
           <Route
-            path="/main"
+            path="/"
             element={
               <div>
                 <Mac_book_pro />
@@ -52,22 +47,18 @@ function App() {
               </div>
             }
           />
+
+          {/* Other routes */}
           <Route path="/mac" element={<Mac />} />
-        <Route path="/iphone" element={<Iphone />} />
-        <Route path="/ipad" element={<Ipad/>} />
-        <Route path="/tv" element={<Tv />} />
-        <Route path="/watch" element={<Watch />} />
-        <Route path="/music" element={<Music />} />
-        <Route path="/services" element={<Services />} />
-        {/* <Route path="/iphone/:pid" element={Productpage} /> */}
-        {/* Error Page for Undefined Routes */}
-        <Route path="*" element={<E404 />} />
-
+          <Route path="/iphone" element={<Iphone />} />
+          <Route path="/ipad" element={<Ipad />} />
+          <Route path="/tv" element={<Tv />} />
+          <Route path="/watch" element={<Watch />} />
+          <Route path="/music" element={<Music />} />
+          <Route path="/services" element={<Services />} />
+          {/* Error Page for Undefined Routes */}
+          <Route path="*" element={<E404 />} />
         </Routes>
-        
-
-
-
       </Router>
 
       {/* Footer is always displayed */}
